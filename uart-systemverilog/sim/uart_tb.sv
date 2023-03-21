@@ -2,21 +2,18 @@
 
 module uart_tb();
 
-parameter DBIT = 8; // # data bits
-parameter SB_TICK = 1; // # 16 ticks for 1 stop bit
-parameter FIFO_W = 2; // # addr bits of FIFO
+  parameter DBIT = 8; // # data bits
+  parameter SB_TICK = 1; // # 16 ticks for 1 stop bit
+  parameter FIFO_W = ; // # addr bits of FIFO
 
-reg clk; 
-reg reset;
-reg rd_uart; 
-reg wr_uart;
-reg rx; 
-reg [7:0] w_data;
-reg [10:0] dvsr;
-wire tx_full; 
-wire rx_empty;
-wire tx;
-wire [7:0] r_data;
+  reg clk;
+  reg reset;
+  wire  [3:0] led;
+  wire  led_r;
+  wire  led_g;
+  wire  led_b;
+  wire  tx;
+  reg rx;
 
-uart #(.DBIT(DBIT), .SB_TICK(SB_TICK),.FIFO_W(FIFO_W)) uart_uut (.*);
+  uart #(.DBIT(DBIT), .SB_TICK(SB_TICK),.FIFO_W(FIFO_W)) uart_uut (.*);
 endmodule

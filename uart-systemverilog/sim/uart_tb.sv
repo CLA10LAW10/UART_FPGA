@@ -40,7 +40,7 @@ module uart_tb();
     reset <= 1'b0;
     #(CP * delay);
 
-    rx <= 1'b1; // Parity Bit
+    rx <= 1'b1; // Start Bit
     #(CP * delay);
     rx <= 1'b0; // Bit 0
     #(13000);

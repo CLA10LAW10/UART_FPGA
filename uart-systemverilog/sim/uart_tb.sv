@@ -45,21 +45,21 @@ module uart_tb();
     rx <= 1'b0; 
     #(13000);
 
-    rx <= 1'b1; // Bit 1
+    rx <= 1'b1; // Bit 0
     #(8600);
-    rx <= 1'b0; // Bit 2
+    rx <= 1'b0; // Bit 1
     #(8800);
-    rx <= 1'b1; // Bit 3
+    rx <= 1'b1; // Bit 2
     #(8850);
-    rx <= 1'b0; // Bit 4
+    rx <= 1'b0; // Bit 3
     #(8850);
-    rx <= 1'b1; // Bit 5
+    rx <= 1'b1; // Bit 4
     #(8800);
-    rx <= 1'b0; // Bit 6
+    rx <= 1'b0; // Bit 5
     #(8850);
-    rx <= 1'b1; // Bit 7
+    rx <= 1'b1; // Bit 6
     #(8800);
-    rx <= 1'b0; // Bit 0
+    rx <= 1'b0; // Bit 7
     #(CP * 40000);
 
     reset <= 1'b1; // Reset

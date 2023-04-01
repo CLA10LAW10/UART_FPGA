@@ -33,7 +33,7 @@ module uart_top
   uart #(.DBIT(DBIT), .SB_TICK(SB_TICK), .FIFO_W(FIFO_DEPTH_BIT)) uart_unit
        (.*, .dvsr(dvsr_reg), .w_data(w_data));
 
-  // // dvsr register
+  // dvsr register
   always_ff @(posedge clk, posedge reset)
     if (reset)
       dvsr_reg <= 0;
@@ -41,7 +41,8 @@ module uart_top
       if (wr_uart)
         dvsr_reg <= dvsr;
 
-  assign led = r_data[3:0];
+  assign led = (reset) ? 'b0 : r_data[3:0];
+  // assign led = r_data[3:0];
   assign wr_uart = sw[0];
   assign rd_uart = 1'b1;
 
